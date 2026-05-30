@@ -1,11 +1,17 @@
 {
-    "name": "STM32 Dev",
+    "name": "ARM Dev",
 
     "build": {
-        "dockerfile": "Dockerfile"
+        "dockerfile": "../Embedded-Development-Container/Dockerfile"
     },
 
+    "workspaceFolder": "/workspace",
+
     "remoteUser": "root",
+
+    "mounts": [
+        "source=${localWorkspaceFolder},target=/workspace,type=bind"
+    ],
 
     "customizations": {
         "vscode": {
@@ -13,9 +19,6 @@
                 "ms-vscode.cmake-tools",
                 "llvm-vs-code-extensions.vscode-clangd",
                 "marus25.cortex-debug",
-                "ms-vscode.cpptools",
-                "twxs.cmake",
-                "eamodio.gitlens",
                 "usernamehw.errorlens"
             ],
 
@@ -33,9 +36,5 @@
         }
     },
 
-    "mounts": [
-        "source=${localWorkspaceFolder},target=/workspace,type=bind"
-    ],
-
-    "workspaceFolder": "/workspace"
+    // "postCreateCommand": "cmake --version"
 }
